@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @EnableEurekaServer
 public class DiscoveryApplication {
 	public static void main(String[] args) {
+		//test for jenkins custom pipeline
 		SpringApplication.run(DiscoveryApplication.class, args);
 	}
 
