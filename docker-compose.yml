@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    discovery: 
+        image: autosurvey/discovery-service
+        restart: always
+        networks:
+            - autosurvey-network
+        ports: 
+            - 8761:8761
+
+
+networks: 
+    autosurvey-network:
+        driver: bridge
