@@ -6,7 +6,8 @@ if [ -z $(docker network ls -q -f name=autosurvey-network) ]; then
 fi
 
 # rm discovery-service container if it exists
-if [ -z $(docker container ls -aqf name=discovery-service) ]; then 
+if [ -n $(docker container ls -aqf name=discovery-service) ]; then
+    docker container stop discovery-service
     docker container rm discovery-service
 fi
 
