@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Check if autosurvey-network network exists
-if [ -z $(docker network ls -q -f name=autosurvey-network) ]; then
+if [ -z "$(docker network ls -q -f name=autosurvey-network)" ]; then
     docker network create autosurvey-network
 fi
 
 # rm discovery-service container if it exists
-if [ -n $(docker container ls -aqf name=discovery-service) ]; then
+if [ -n "$(docker container ls -aqf name=discovery-service)" ]; then
     docker container stop discovery-service
     docker container rm discovery-service
 fi
